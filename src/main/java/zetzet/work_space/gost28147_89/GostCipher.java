@@ -1,10 +1,5 @@
 package zetzet.work_space.gost28147_89;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 public class GostCipher {
 
     // S-блоки (таблицы замены) для алгоритма ГОСТ 28147-89

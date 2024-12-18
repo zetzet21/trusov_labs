@@ -217,13 +217,16 @@ public class Main {
             System.out.println("\nRSA Cipher Options:");
             System.out.println("1. Encrypt text");
             System.out.println("2. Decrypt text");
-            System.out.println("3. Back");
+            System.out.println("3. View public key");
+            System.out.println("4. View private key");
+            System.out.println("5. Generate new keys");
+            System.out.println("6. Back");
             System.out.print("Your choice: ");
 
             int choice = scanner.nextInt();
             scanner.nextLine();
 
-            if (choice == 3) break;
+            if (choice == 6) break;
 
             switch (choice) {
                 case 1 -> {
@@ -236,10 +239,23 @@ public class Main {
                     String text = scanner.nextLine();
                     System.out.println("Decrypted text: " + rsa.decrypt(text));
                 }
+                case 3 -> {
+                    System.out.println("Public Key: " + rsa.getPublicKey());
+                    System.out.println("Modulus: " + rsa.getModulus());
+                }
+                case 4 -> {
+                    System.out.println("Private Key: " + rsa.getPrivateKey());
+                    System.out.println("Modulus: " + rsa.getModulus());
+                }
+                case 5 -> {
+                    rsa = new RSACipher();
+                    System.out.println("New RSA keys generated.");
+                }
                 default -> System.out.println("Invalid choice. Try again.");
             }
         }
     }
+
 
     // Меню для хэширования
     private static void hashingMenu(HashCipher hashCipher, Scanner scanner) {
